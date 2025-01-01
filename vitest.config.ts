@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { defineConfig } from "vitest/config";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
@@ -14,3 +15,21 @@ export default defineConfig({
     alias: { "@": path.resolve(__dirname, "./src") },
   },
 });
+=======
+import { defineConfig } from "vitest/config";
+import react from "@vitejs/plugin-react-swc";
+import path from "path";
+
+export default defineConfig({
+  plugins: [react()],
+  test: {
+    environment: "jsdom",
+    globals: true,
+    setupFiles: ["./src/test/setup.ts"],
+    include: ["src/**/*.{test,spec}.{ts,tsx}"],
+  },
+  resolve: {
+    alias: { "@": path.resolve(__dirname, "./src") },
+  },
+});
+>>>>>>> b331aa1 (template: new_style_vite_react_shadcn_ts_testing_2026-01-08)
