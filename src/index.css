@@ -6,6 +6,50 @@
 
 @layer base {
   :root {
+    --background: 0 0% 98%;
+    --foreground: 210 30% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 30% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 30% 12%;
+
+    --primary: 170 80% 40%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 15% 93%;
+    --secondary-foreground: 210 20% 25%;
+
+    --muted: 210 15% 95%;
+    --muted-foreground: 210 10% 45%;
+
+    --accent: 170 80% 40%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 15% 88%;
+    --input: 210 15% 88%;
+    --ring: 170 80% 40%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 97%;
+    --sidebar-foreground: 210 30% 12%;
+    --sidebar-primary: 170 80% 40%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 15% 93%;
+    --sidebar-accent-foreground: 210 30% 12%;
+    --sidebar-border: 210 15% 88%;
+    --sidebar-ring: 170 80% 40%;
+
+    --font-heading: 'JetBrains Mono', monospace;
+    --font-body: 'Inter', sans-serif;
+  }
+
+  .dark {
     --background: 210 30% 8%;
     --foreground: 180 10% 90%;
 
@@ -34,8 +78,6 @@
     --input: 210 20% 18%;
     --ring: 170 80% 50%;
 
-    --radius: 0.75rem;
-
     --sidebar-background: 210 25% 10%;
     --sidebar-foreground: 180 10% 90%;
     --sidebar-primary: 170 80% 50%;
@@ -44,9 +86,6 @@
     --sidebar-accent-foreground: 180 10% 90%;
     --sidebar-border: 210 20% 18%;
     --sidebar-ring: 170 80% 50%;
-
-    --font-heading: 'JetBrains Mono', monospace;
-    --font-body: 'Inter', sans-serif;
   }
 }
 
