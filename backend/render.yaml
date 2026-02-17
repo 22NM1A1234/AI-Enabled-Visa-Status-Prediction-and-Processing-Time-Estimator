@@ -1,0 +1,16 @@
+# Render.com deployment configuration
+# Place this file in the root of your backend repo
+
+services:
+  - type: web
+    name: visa-prediction-api
+    runtime: python
+    buildCommand: |
+      pip install -r requirements.txt
+      python train_model.py
+    startCommand: gunicorn app:app
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.11"
+      - key: PORT
+        value: "10000"

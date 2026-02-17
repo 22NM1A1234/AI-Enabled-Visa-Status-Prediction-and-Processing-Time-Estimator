@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { ArrowRight, Loader2, RotateCcw, Info } from "lucide-react";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
-import { predict, type UserInput, type PredictionResult } from "@/lib/model";
+import { type UserInput, type PredictionResult } from "@/lib/model";
+import { predictFromApi } from "@/lib/api";
 import PredictionResults from "./PredictionResults";
 
 const continents = ["Asia", "Europe", "North America", "South America", "Oceania", "Africa"] as const;
@@ -95,23 +96,22 @@ const PredictionForm = () => {
     setLoading(true);
     setResult(null);
 
-    // Simulate brief processing delay for UX
-    setTimeout(() => {
-      const input: UserInput = {
-        hasJobExperience: form.hasJobExperience === "Yes",
-        requiresJobTraining: form.requiresJobTraining === "Yes",
-        numberOfEmployees: Number(form.numberOfEmployees),
-        yearOfEstablishment: Number(form.yearOfEstablishment),
-        prevailingWage: Number(form.prevailingWage),
-        fullTimePosition: form.fullTimePosition === "Yes",
-        continent: form.continent as UserInput["continent"],
-        education: form.education as UserInput["education"],
-        region: form.region as UserInput["region"],
-        unitOfWage: form.unitOfWage as UserInput["unitOfWage"],
-      };
-      setResult(predict(input));
-      setLoading(false);
-    }, 1500);
+    const input: UserInput = {
+      hasJobExperience: form.hasJobExperience === "Yes",
+      requiresJobTraining: form.requiresJobTraining === "Yes",
+      numberOfEmployees: Number(form.numberOfEmployees),
+      yearOfEstablishment: Number(form.yearOfEstablishment),
+      prevailingWage: Number(form.prevailingWage),
+      fullTimePosition: form.fullTimePosition === "Yes",
+      continent: form.continent as UserInput["continent"],
+      education: form.education as UserInput["education"],
+      region: form.region as UserInput["region"],
+      unitOfWage: form.unitOfWage as UserInput["unitOfWage"],
+    };
+
+    predictFromApi(input)
+      .then((res) => setResult(res))
+      .finally(() => setLoading(false));
   };
 
   const handleReset = () => {
