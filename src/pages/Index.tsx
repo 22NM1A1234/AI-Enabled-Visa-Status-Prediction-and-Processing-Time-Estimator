@@ -5,6 +5,7 @@ import PipelineSection from "@/components/PipelineSection";
 import PredictionForm from "@/components/PredictionForm";
 import HowItWorks from "@/components/HowItWorks";
 import ModelMetrics from "@/components/ModelMetrics";
+import TechStack from "@/components/TechStack";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -17,6 +18,7 @@ const Index = () => {
       <PredictionForm />
       <HowItWorks />
       <ModelMetrics />
+      <TechStack />
       <Footer />
     </div>
   );
