@@ -103,6 +103,9 @@ def get_metrics():
 def health():
     return jsonify({"status": "ok"})
 
+@app.route("/")
+def home():
+    return "Visa Status Prediction API is running successfully!"
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
