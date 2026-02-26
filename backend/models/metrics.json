@@ -1,0 +1,39 @@
+{
+  "classification": {
+    "accuracy": 0.7396,
+    "precision": 0.7658,
+    "recall": 0.879,
+    "f1_score": 0.8185
+  },
+  "regression": {
+    "mae": 11.25,
+    "rmse": 13.64,
+    "r2": -0.0002
+  },
+  "dataset_size": 25480,
+  "train_size": 20384,
+  "test_size": 5096,
+  "features": [
+    "has_job_experience",
+    "requires_job_training",
+    "no_of_employees",
+    "yr_of_estab",
+    "prevailing_wage",
+    "full_time_position",
+    "continent_Asia",
+    "continent_Europe",
+    "continent_North America",
+    "continent_Oceania",
+    "continent_South America",
+    "education_of_employee_Doctorate",
+    "education_of_employee_High School",
+    "education_of_employee_Master's",
+    "region_of_employment_Midwest",
+    "region_of_employment_Northeast",
+    "region_of_employment_South",
+    "region_of_employment_West",
+    "unit_of_wage_Month",
+    "unit_of_wage_Week",
+    "unit_of_wage_Year"
+  ]
+}
