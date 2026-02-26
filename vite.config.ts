@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
@@ -20,7 +20,8 @@ export default defineConfig(({ mode }) => ({
     },
   },
 }));
-=======
+
+
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
@@ -42,4 +43,4 @@ export default defineConfig(({ mode }) => ({
     },
   },
 }));
->>>>>>> b331aa1 (template: new_style_vite_react_shadcn_ts_testing_2026-01-08)
+
