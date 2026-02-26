@@ -5,7 +5,7 @@ import PipelineSection from "@/components/PipelineSection";
 import PredictionForm from "@/components/PredictionForm";
 import HowItWorks from "@/components/HowItWorks";
 import ModelMetrics from "@/components/ModelMetrics";
-
+import HistoricalData from "@/components/HistoricalData";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -17,8 +17,8 @@ const Index = () => {
       <PipelineSection />
       <PredictionForm />
       <HowItWorks />
+      <HistoricalData />
       <ModelMetrics />
-      
       <Footer />
     </div>
   );

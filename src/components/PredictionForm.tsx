@@ -65,6 +65,7 @@ const PredictionForm = () => {
   const [form, setForm] = useState<FormState>(initial);
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState<PredictionResult | null>(null);
+  const [lastInput, setLastInput] = useState<UserInput | null>(null);
   const [errors, setErrors] = useState<Partial<Record<keyof FormState, string>>>({});
 
   const update = (key: keyof FormState, value: string) => {
@@ -96,7 +97,7 @@ const PredictionForm = () => {
     setLoading(true);
     setResult(null);
 
-    const input: UserInput = {
+    const userInput: UserInput = {
       hasJobExperience: form.hasJobExperience === "Yes",
       requiresJobTraining: form.requiresJobTraining === "Yes",
       numberOfEmployees: Number(form.numberOfEmployees),
@@ -109,7 +110,8 @@ const PredictionForm = () => {
       unitOfWage: form.unitOfWage as UserInput["unitOfWage"],
     };
 
-    predictFromApi(input)
+    setLastInput(userInput);
+    predictFromApi(userInput)
       .then((res) => setResult(res))
       .finally(() => setLoading(false));
   };
@@ -253,7 +255,7 @@ const PredictionForm = () => {
           </div>
         </form>
 
-        {result && <PredictionResults result={result} />}
+        {result && lastInput && <PredictionResults result={result} input={lastInput} onNewPrediction={handleReset} />}
       </div>
     </section>
   );
